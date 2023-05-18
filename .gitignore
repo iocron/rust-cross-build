@@ -1,1 +1,21 @@
+# Rust
+.env
 /target
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Desktop.ini
+Thumbs.db
+.Spotlight-V100
+.Trashes
+.cache
+.thumb
+
+# Misc
+test.sh
+node_modules
+
+# Keep specific folders (.gitkeep helper)
+!.gitkeep
