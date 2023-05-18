@@ -1,27 +1,32 @@
 #!/bin/bash
 
 if [[ ! "$(command -v rustup)" ]]; then
+    printf "setup of rust / rustup..\n"
     curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-    echo "setup of rust / rustup completed."
+    printf "\nsetup of rust / rustup completed.\n"
 else
-    echo "rust / rustup already installed, skip.."
+    printf "rust / rustup already installed, skip..\n"
 fi
 
 if [[ ! "$(command -v cross)" ]]; then
+    printf "cargo install cross..\n"
     cargo install cross
-    echo "cargo cross installation completed."
+    printf "\ncargo cross installation completed.\n"
 else
-    echo "cargo cross is already installed, skip.."
+    printf "cargo cross is already installed, skip..\n"
 fi
 
 if [[ ! -f "Cargo.toml" && ! -f "Cargo.lock" ]]; then
+    printf "cargo init..\n"
     cargo init --bin
-    echo "cargo init completed."
+    printf "\nAdding enchanced profiles in Cargo.toml: "
+    printf "\n[profile.release]\nstrip = \"debuginfo\"\n" | tee -a Cargo.toml
+    printf "\ncargo init completed.\n"
 else
-    echo "cargo init already exists, skip.."
+    printf "cargo init already exists, skip..\n"
 fi
 
 if [[ ! -f ".env" ]]; then
     cp .env_example .env
 fi
-echo "Adjust your variables in the .env file for customization."
+printf "\nAdjust your variables in the .env file for customization.\n"

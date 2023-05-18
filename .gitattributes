@@ -1,0 +1,14 @@
+### Ignore files/folders on release/archives
+src export-ignore
+target export-ignore
+Cargo.toml export-ignore
+Cargo.lock export-ignore
+
+.env export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
+
+README.md export-ignore
+LICENSE export-ignore
+LICENSE.md export-ignore
+LICENSE.txt export-ignore

@@ -1,5 +1,5 @@
 [package]
-name = "rust-cross-compiler-template"
+name = "rust-cross-build"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 
 [profile.release]
-strip = "debuginfo" ## Makes the binaries much smaller, but removes debuginfo
+strip = "debuginfo"
